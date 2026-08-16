@@ -9,7 +9,7 @@ Criar uma loja online moderna e eficiente especializada na venda de peças e com
 ## 🔧 Stack Técnico
 
 | Componente | Tecnologia | Versão |
-|-----------|-----------|--------|
+| --- | --- | --- |
 | **Backend** | Django | 6.1 |
 | **Banco de Dados** | SQLite (dev) / PostgreSQL (prod) | - |
 | **Frontend** | HTML5 + CSS3 + JavaScript | ES6+ |
@@ -25,12 +25,14 @@ Criar uma loja online moderna e eficiente especializada na venda de peças e com
 ## 🚀 Configuração Rápida
 
 ### 1. Clone o repositório
+
 ```bash
 git clone <seu-repositorio>
 cd projeto
 ```
 
 ### 2. Crie um ambiente virtual
+
 ```bash
 python -m venv venv
 ```
@@ -38,42 +40,46 @@ python -m venv venv
 **Ativar ambiente virtual:**
 
 Windows (PowerShell):
-```bash
+
+```powershell
 venv\Scripts\Activate.ps1
 ```
 
 Windows (CMD):
-```bash
+
+```cmd
 venv\Scripts\activate.bat
 ```
 
 macOS/Linux:
+
 ```bash
 source venv/bin/activate
 ```
 
 ### 3. Instale as dependências
+
 ```bash
 pip install -r requirements.txt
-pip install python-dotenv  # Para gerenciar variáveis de ambiente
+pip install python-dotenv
 ```
 
 ### 4. Configure variáveis de ambiente
-```bash
-# Copie o arquivo de exemplo
-copy .env.example .env  # Windows
-cp .env.example .env    # macOS/Linux
 
-# Edite o .env com suas configurações
+```bash
+copy .env.example .env
+cp .env.example .env
 ```
 
 ### 5. Execute as migrações do banco de dados
+
 ```bash
 python manage.py makemigrations
 python manage.py migrate
 ```
 
 ### 6. Crie um superusuário (acesso ao admin)
+
 ```bash
 python manage.py createsuperuser
 ```
@@ -81,17 +87,19 @@ python manage.py createsuperuser
 Você será solicitado a criar credenciais para acessar o painel administrativo.
 
 ### 7. Inicie o servidor de desenvolvimento
+
 ```bash
 python manage.py runserver
 ```
 
 **Acessos:**
-- 🌐 Site: http://localhost:8000
-- 🔐 Admin: http://localhost:8000/admin
+
+- 🌐 [Site Local](http://localhost:8000)
+- 🔐 [Painel Admin](http://localhost:8000/admin)
 
 ## 📂 Estrutura do Projeto
 
-```
+```txt
 projeto/
 ├── projeto/                 # Configurações principais do Django
 │   ├── settings.py         # Configurações do projeto (BD, apps, middleware)
@@ -133,7 +141,7 @@ projeto/
 ## 🌐 Rotas Disponíveis
 
 | Rota | Método | Descrição | Autenticação |
-|------|--------|-----------|--------------|
+| --- | --- | --- | --- |
 | `/` | GET | Página inicial da loja | Não |
 | `/produtos/` | GET | Listagem de produtos | Não |
 | `/produtos/<id>/` | GET | Detalhe do produto | Não |
@@ -142,6 +150,7 @@ projeto/
 ## 💾 Modelos de Dados
 
 ### Produtos (A implementar)
+
 - `id` - Identificador único
 - `nome` - Nome do produto
 - `descricao` - Descrição detalhada
@@ -153,6 +162,7 @@ projeto/
 - `atualizado_em` - Data de atualização
 
 ### Categorias (A implementar)
+
 - `id` - Identificador único
 - `nome` - Nome da categoria
 - `descricao` - Descrição
@@ -160,6 +170,7 @@ projeto/
 ## 🔧 Configurações Importantes
 
 ### Desenvolvimento
+
 ```env
 DEBUG=True
 SECRET_KEY=sua-chave-secreta-de-desenvolvimento
@@ -168,6 +179,7 @@ DATABASE_URL=sqlite:///db.sqlite3
 ```
 
 ### Produção
+
 ```env
 DEBUG=False
 SECRET_KEY=chave-secreta-segura-gerada
@@ -178,28 +190,19 @@ DATABASE_URL=postgresql://user:password@host:port/database
 ## 🛠️ Ferramentas de Desenvolvimento
 
 ```bash
-# Executar testes
 python manage.py test
-
-# Criar um super-usuário
 python manage.py createsuperuser
-
-# Verificar problemas de segurança
 python manage.py check --deploy
-
-# Limpar cache de migrações
 python manage.py makemigrations --empty products --name initial_migration
-
-# Shell interativo Django
 python manage.py shell
 ```
 
 ## 📚 Dependências Principais
 
-```
-Django==6.1              # Framework web Python
-asgiref==3.12.1          # Suporte para ASGI/async
-python-dotenv==1.0.0     # Gerenciar variáveis de ambiente
+```txt
+Django==6.1
+asgiref==3.12.1
+python-dotenv==1.0.0
 ```
 
 ## 🔒 Segurança
@@ -244,9 +247,10 @@ Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para ma
 
 ## 👨‍💻 Autor
 
-**Gabriel Cherem**
-- GitHub: [@seu-usuario](https://github.com/seu-usuario)
-- Email: seu-email@example.com
+Gabriel Cherem
+
+- GitHub: [github.com/seu-usuario](https://github.com/seu-usuario)
+- Email: [seu-email@example.com](mailto:seu-email@example.com)
 
 ## 📞 Suporte
 
