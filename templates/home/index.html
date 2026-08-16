@@ -11,9 +11,9 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 
-<body class="bg-light">
+<body class="bg-light d-flex flex-column min-vh-100">
 
-    <!-- NAVBAR / CAVEÇALHO -->
+    <!-- NAVBAR / CABEÇALHO -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow-sm">
         <div class="container">
             <a class="navbar-brand fw-bold text-primary fs-3" href="#">
@@ -44,108 +44,10 @@
         </div>
     </nav>
 
-    <!-- BANNER HERO PRINCIPAL -->
-    <header class="bg-dark text-white py-5 mb-5 border-bottom border-primary border-3">
-        <div class="container py-4">
-            <div class="row align-items-center">
-                <div class="col-lg-7">
-                    <span class="badge bg-primary mb-2 px-3 py-2 fs-6">Hardware de Alta Performance</span>
-                    <h1 class="display-4 fw-bold mb-3">Monte o PC dos seus sonhos com a TechParts</h1>
-                    <p class="lead mb-4 text-secondary">
-                        Placas de vídeo, processadores, memórias RAM, SSDs e tudo o que você precisa para elevar o nível
-                        do seu setup gamer ou de trabalho.
-                    </p>
-                    <!-- BOTAO COM REDIRECIONAMENTO PARA PRODUTOS -->
-                    <a href="{% url 'produtos:produtos_home' %}" class="btn btn-primary btn-lg me-2 fw-semibold">
-                        Ver Catálogo Completo <i class="bi bi-arrow-right-short"></i>
-                    </a>
-                </div>
-                <div class="col-lg-5 text-center mt-4 mt-lg-0">
-                    <img src="https://images.unsplash.com/photo-1587202372775-e229f172b9d7?auto=format&fit=crop&w=600&q=80"
-                        alt="Hardware de Computador" class="img-fluid rounded-3 shadow-lg border border-secondary">
-                </div>
-            </div>
-        </div>
-    </header>
-
-    <!-- CATEGORIAS EM DESTAQUE -->
-    <main class="container mb-5">
-        <div class="d-flex justify-content-between align-items-center mb-4">
-            <h2 class="h3 fw-bold text-dark m-0">Categorias em Destaque</h2>
-            <a href="{% url 'produtos:produtos_home' %}" class="text-primary text-decoration-none fw-semibold">
-                Ver todas <i class="bi bi-chevron-right"></i>
-            </a>
-        </div>
-
-        <div class="row g-4">
-            <!-- Categoria 1 -->
-            <div class="col-md-4">
-                <div class="card h-100 shadow-sm border-0 hover-top">
-                    <div class="card-body text-center p-4">
-                        <div class="fs-1 text-primary mb-3">
-                            <i class="bi bi-gpu-card"></i>
-                        </div>
-                        <h3 class="h5 card-title fw-bold">Placas de Vídeo</h3>
-                        <p class="card-text text-muted">As melhores GPUs NVIDIA e AMD para rodar tudo no ultra.</p>
-                        <a href="{% url 'produtos:produtos_home' %}" class="btn btn-outline-primary btn-sm">Explorar
-                            GPUs</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Categoria 2 -->
-            <div class="col-md-4">
-                <div class="card h-100 shadow-sm border-0">
-                    <div class="card-body text-center p-4">
-                        <div class="fs-1 text-primary mb-3">
-                            <i class="bi bi-cpu"></i>
-                        </div>
-                        <h3 class="h5 card-title fw-bold">Processadores</h3>
-                        <p class="card-text text-muted">Processadores Intel Core e AMD Ryzen para alta produtividade e
-                            jogos.</p>
-                        <a href="{% url 'produtos:produtos_home' %}" class="btn btn-outline-primary btn-sm">Explorar
-                            CPUs</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Categoria 3 -->
-            <div class="col-md-4">
-                <div class="card h-100 shadow-sm border-0">
-                    <div class="card-body text-center p-4">
-                        <div class="fs-1 text-primary mb-3">
-                            <i class="bi bi-memory"></i>
-                        </div>
-                        <h3 class="h5 card-title fw-bold">Armazenamento & RAM</h3>
-                        <p class="card-text text-muted">SSDs NVMe ultrarrápidos e memórias DDR4/DDR5 para o seu setup.
-                        </p>
-                        <a href="{% url 'produtos:produtos_home' %}" class="btn btn-outline-primary btn-sm">Explorar
-                            Memórias</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- SEÇÃO DIFERENCIAIS -->
-        <section id="diferenciais" class="my-5 py-4 bg-white rounded-3 shadow-sm p-4">
-            <div class="row text-center g-4">
-                <div class="col-md-4">
-                    <i class="bi bi-truck fs-1 text-primary"></i>
-                    <h4 class="h5 mt-2 fw-bold">Entrega Rápida</h4>
-                    <p class="text-muted small mb-0">Enviamos para todo o Brasil com rastreamento.</p>
-                </div>
-                <div class="col-md-4">
-                    <i class="bi bi-shield-check fs-1 text-primary"></i>
-                    <h4 class="h5 mt-2 fw-bold">Garantia Oficial</h4>
-                    <p class="text-muted small mb-0">Produtos 100% originais e com garantia de fábrica.</p>
-                </div>
-                <div class="col-md-4">
-                    <i class="bi bi-credit-card fs-1 text-primary"></i>
-                    <h4 class="h5 mt-2 fw-bold">Até 12x Sem Juros</h4>
-                    <p class="text-muted small mb-0">Ou 10% de desconto no Pix à vista.</p>
-                </div>
-            </div>
-        </section>
+    <!-- ÁREA DE CONTEÚDO (Onde o index.html será injetado) -->
+    <main class="flex-grow-1">
+        {% block content %}
+        {% endblock %}
     </main>
 
     <!-- FOOTER / RODAPÉ -->
@@ -153,7 +55,6 @@
         <div class="container text-center">
             <p class="mb-1 fw-bold text-primary"><i class="bi bi-cpu"></i> TechParts Store</p>
             <p class="small text-secondary mb-3">Sua loja de peças de computador de confiança.</p>
-            <p class="small text-secondary mb-3">By Gabriel Cherem</p>
             <div class="mb-3">
                 <a href="{% url 'produtos:produtos_home' %}" class="text-light me-3 text-decoration-none">Produtos</a>
                 <a href="#diferenciais" class="text-light me-3 text-decoration-none">Sobre</a>
